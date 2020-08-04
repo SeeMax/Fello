@@ -1,0 +1,344 @@
+@import "colors";
+
+html, body {
+	height:100%;
+	width:100%;
+}
+
+body {
+	font:300 16px/1.3 'NeueHaas', sans-serif;
+	color:black;
+	letter-spacing:0.05em;
+	position: relative;
+}
+
+.wrapper {
+	width:100%;
+	min-height: 100%;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+main {
+	position: relative;
+	min-height: 100%;
+	width:100%;
+}
+
+section {
+	position: relative;
+	width:100%;
+	height:auto;
+}
+
+.content {
+	position: relative;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: flex-start;
+	width:100%;
+	height:auto;
+	max-width: 1300px;
+	margin:0px auto;
+	padding:70px 50px 90px 50px;
+}
+
+.no-flex {
+
+	.content {
+		display:block;
+		overflow: auto;
+	}
+}
+
+a {
+	color:red;
+	transition: all 0.3s ease;
+
+	&:hover {
+		color:blue;
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	font:600 16px/1.3 'NeueHaas', sans-serif;
+	margin:0;
+	width:100%;
+}
+
+h1 {
+	font-size:150px;
+	line-height:1.1;
+}
+
+h2 {
+	font-size:48px;
+}
+
+h3 {
+	font-weight:600;
+	font-size:30px;
+}
+
+h4 {
+	font-weight: 400;
+	font-size:22px;
+	line-height: 1.45;
+}
+
+h5 {
+	font-size:20px;
+}
+
+p {
+	width:100%;
+}
+
+ul {
+	width:100%;
+	list-style: none;
+	padding-left:0px;
+	margin:1em 0;
+
+	li {
+		width:100%;
+		position: relative;
+		padding-left:14px;
+		margin:.25em 0;
+
+		&:before {
+			content:"•";
+			position: absolute;
+			left:0px;
+			top:1px;
+		}
+	}
+}
+
+hr {
+	background: black;
+	margin:0;
+	text-align: left;
+	border:0;
+	width:60px;
+	height: 1px;
+}
+
+.seemax-button {
+	position: relative;
+	display: inline-block;
+	width:auto;
+	height:auto;
+	background-color:$darkGray;
+	color:white;
+	font-weight: 600;
+	font-size: 13px;
+	padding:16px 48px 15px 48px;
+	transition:all .25s ease-out;
+	box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.0);
+	overflow:hidden;
+
+	a {
+		color:white;
+		transition:color .25s ease-out;
+		z-index:4;
+	}
+
+	span {
+		position: relative;
+		z-index:3;
+	}
+
+	&:before {
+		opacity:0;
+		content:"";
+		position: absolute;
+		z-index:1;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:$rainbowGradient;
+		transition:all .25s ease-in-out;
+	}
+
+	&:after {
+		content:"";
+		position: absolute;
+		z-index:2;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:$darkGray;
+		transition:all .15s ease-in-out;
+	}
+
+	&:hover {
+		box-shadow: 0px 3px 8px -2px rgba(0,0,0,0.25);
+		
+		&:after {
+			opacity:0;
+			
+			// left:100%;
+			width:100%;
+			height:100%;
+			background:$darkGray;
+		}
+
+		&:before {
+			opacity:1;
+			
+			// left:100%;
+		}
+	}
+}
+
+.seemax-button-secondary {
+	border:1px solid rgba(0,0,0,1);
+	color:$darkGray;
+
+	a {
+		color:white;
+		transition:color .25s ease-out;
+	}
+
+	&:after {
+		background:white;
+	}
+
+	&:hover {
+		color:white;
+		box-shadow: 0px 3px 8px -2px rgba(0,0,0,0.25);
+		border:1px solid rgba(0,0,0,0.2) !important;
+
+		&:after {
+			
+		}
+	}
+}
+
+// Mailchimp Wrapper Styles / Form Is In Footer
+.mailchimp-wrapper {
+	position: relative;
+	width:100%;
+	height:auto;
+	display: flex;
+	justify-content: center;
+
+	.error-message, .mc-status {
+		text-lign:left;
+		color:red;
+		position: absolute;
+		top:calc(100% + 1em);
+		left:0;
+		width:100%;
+		height:auto;
+	}
+
+	.mc-status {
+		color:black;
+	}
+}
+
+input[type="email"] {
+	padding:15px 20px;
+	text-align:left;
+	font:300 15px/1.3 'NeueHaas', sans-serif;
+	letter-spacing:0.05em;
+	border-radius: 0px;
+
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color:gray;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+		color:gray;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+		color:gray;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		color:gray;
+	}
+}
+
+
+.background-image-section {
+	background: no-repeat center center;
+  background-size: cover;
+}
+
+.custom-pagination {
+	background: white;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:100%;
+	text-align: center;
+	padding:0px 20px;
+
+	.page-numbers {
+		margin:0px;
+		padding:5px 10px;
+		color:red;
+		border-bottom:2px solid gray;
+	}
+
+	.current {
+		border-bottom:2px solid red;
+		margin:40px 0px;
+	}
+
+	.next, .prev  {
+		background: red;
+		padding:5px 20px;
+		margin:10px;
+		color:white;
+		border-bottom:0px solid red;
+	}
+}
+
+.paragraph-block, .list-block {
+
+	.content {
+		padding-top:0em;
+		padding-bottom:0em;
+	}
+}
+
+.heading-block {
+
+	.content {
+		padding-top:1em;
+		padding-bottom:1em;
+	}
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.seemax-button {
+	
+		&:hover {
+			
+		}
+	}
+}
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+
+	h1 {
+		font-size:80px;
+		line-height:1.1;
+	}
+
+	.content {
+		padding-left:40px;
+		padding-right:40px;
+	}
+}
